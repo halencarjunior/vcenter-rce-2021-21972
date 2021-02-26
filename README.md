@@ -10,10 +10,16 @@ Disclaimer: This is for Educational Purposes only!
   [1 - tenable article ](https://www.tenable.com/blog/cve-2021-21972-vmware-vcenter-server-remote-code-execution-vulnerability)
 
   [2 - rapid7 blog ](https://blog.rapid7.com/2021/02/24/vmware-vcenter-server-cve-2021-21972-remote-code-execution-vulnerability-what-you-need-to-know/)
-    
+
+## Workarounds
+
+  https://kb.vmware.com/s/article/82374
+  
+  https://kb.vmware.com/s/article/76372
+
 ## Usage:
 
-    $ ./vcenter-rce-2021-21972 [OPTIONS] --host <Host IP or domain>
+    $ ./vcenter-rce-2021-21972 [OPTIONS]
 
 ## FLAGS:
 
@@ -22,8 +28,7 @@ Disclaimer: This is for Educational Purposes only!
 
 ## OPTIONS:
 
-    -i, --test-id <ID [1-3]>          Chose the URL to test by number 1-3
-    -a, --all <all>                   Perform all tests on all URLs
+    -f, --file <filename>             File containing a list of IPs
     -H, --host <Host IP or domain>    Host IP or Domain to be checked for CVE
 
 ## Installation

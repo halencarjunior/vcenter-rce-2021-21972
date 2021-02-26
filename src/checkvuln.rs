@@ -9,7 +9,6 @@ use std::time::Duration;
 
 #[tokio::main]
 pub async fn checkvuln(host: String) -> Result<(), Error> {
-    //let timeout = Duration::new(2,0);
 
     let mut headers = header::HeaderMap::new();
     headers.insert("Content-Length", header::HeaderValue::from_static("0"));
@@ -24,7 +23,6 @@ pub async fn checkvuln(host: String) -> Result<(), Error> {
     println!("{}", "Just for Educational Purposes".color(Color::Red).bold());
     println!("\n[+] Testing Host: {}\n",host.to_string().color(Color::Black).bg_color(Color::Yellow).bold());
    
-    
     // Testing 1st URL using get method
     println!("[+] Checking url: {}",url1);
     let client = ClientBuilder::new().danger_accept_invalid_certs(true).timeout(Duration::from_secs(2)).build()?;
@@ -74,15 +72,10 @@ pub fn file_list(filename: String) {
         for line in lines {
             if let Ok(ip) = line {
                 checkvuln(ip);
-                //println!("IP: {}", ip);
             }
         }
     }
-
-    //let contents = fs::read_to_string(filename).expect("Something went wrong reading the file");
-    //println!("Text:\n{}", contents);
 }
-
 
 fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 where P: AsRef<Path>, {
