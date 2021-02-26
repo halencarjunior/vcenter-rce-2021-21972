@@ -1,0 +1,20 @@
+[package]
+name = "vcenter-rce-2021-21972"
+version = "0.1.0"
+authors = ["Humberto Jr <halencarjunior@gmail.com>"]
+edition = "2018"
+license = "GPL v3"
+description = "VMware vCenter CVE-2021-21972 checker"
+readme = "README.md"
+repository = "https://github.com/halencarjunior/vcenter-rce-2021-21972"
+keywords = ["exploit","poc","cli"]
+categories = ["cli", "script", "vuln-scanner"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = { version = "0.11.1", features = ["blocking","json",] }
+tokio = { version="1.1", features = ["full"]}
+error-chain = "0.12.4" 
+clap = "2.33.3"
+colorful = "0.2.1"
